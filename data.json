@@ -1,0 +1,54 @@
+{
+    "competitiveStats": {
+        "awards": {
+            "cards": 28,
+            "medals": 284,
+            "medalsBronze": 93,
+            "medalsGold": 89,
+            "medalsSilver": 102
+        },
+        "games": {
+            "played": 94,
+            "won": 44
+        }
+    },
+    "endorsement": 3,
+    "endorsementIcon": "https://static.playoverwatch.com/svg/icons/endorsement-frames-3c9292c49d.svg#_3",
+    "gamesWon": 2616,
+    "icon": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/ef3756b07e0920efd2cafa90cde0638dc4df5df22d6ec12f96d623aaace2bdd2.png",
+    "level": 32,
+    "levelIcon": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/624461e537900ce98e3178d1a298cba4830c14f6a81a8b36319da6273bed255a.png",
+    "name": "Slinky#21792",
+    "prestige": 8,
+    "prestigeIcon": "https://d15f34w2p8l1cc.cloudfront.net/overwatch/c137dd97008328ed94efc5a9ec446e024c9ac92fce89fa5b825c5b1d7ff8d807.png",
+    "private": false,
+    "quickPlayStats": {
+        "awards": {
+            "cards": 670,
+            "medals": 5835,
+            "medalsBronze": 1834,
+            "medalsGold": 1962,
+            "medalsSilver": 2038
+        },
+        "games": {
+            "played": 0,
+            "won": 1147
+        }
+    },
+    "rating": 3440,
+    "ratingIcon": "https://d1u1mce87gyfbn.cloudfront.net/game/rank-icons/rank-BronzeTier.png",
+    "ratings": [
+        {
+            "level": 3534,
+            "rankIcon": "https://d1u1mce87gyfbn.cloudfront.net/game/rank-icons/rank-MasterTier.png",
+            "role": "tank",
+            "roleIcon": "https://static.playoverwatch.com/img/pages/career/icon-tank-8a52daaf01.png"
+        },
+        {
+            "level": 3346,
+            "rankIcon": "https://d1u1mce87gyfbn.cloudfront.net/game/rank-icons/rank-DiamondTier.png",
+            "role": "support",
+            "roleIcon": "https://static.playoverwatch.com/img/pages/career/icon-support-46311a4210.png"
+        }
+    ]
+}
