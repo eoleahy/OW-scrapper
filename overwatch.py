@@ -19,7 +19,7 @@ class Overwatch():
 
     def get_profile(self):
 
-        URL = "https://ow-api.com/v1/stats/"+self.platform+"/"+self.region+"/"+self.account+"/profile"
+        URL = "https://ow-api.com/v1/stats/%s/%s/%s/profile" % (self.platform,self.region,self.account)
         r=requests.get(url=URL,params="")
         data=r.json()
         return data
