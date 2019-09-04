@@ -1,9 +1,8 @@
 
-import requests
-import json
 import os, sys
 from threading import Timer
 from _thread import *
+from overwatch import Overwatch
 
 import pygame
 
@@ -13,6 +12,10 @@ font_size=200
 FULL_SCREEN = 0
 
 def main():
+
+    overwatch=Overwatch("","","")
+    elo = overwatch.get_rating()
+    overwatch.profile_to_json()
 
     pygame.init()
 
@@ -27,11 +30,12 @@ def main():
         screen = pygame.display.set_mode(size)
 
     #Loop that renders images
+
+
+
     while(1):
         for event in pygame.event.get():
             if event.type == pygame.QUIT: sys.exit()
-
-        elo = 3521
 
         rank = determine_rank(elo)
 
@@ -75,18 +79,8 @@ def determine_rank(elo):
 
     return "bronze"
 
-def data_fetch():
-    account=""
-    URL = "https://ow-api.com/v1/stats/pc/eu/"+account+"/profile"
 
-    r=requests.get(url=URL,params="")
-    data=r.json()
 
-    with open("data.json","w")as f:
-        f.write(json.dumps(data,indent=4,sort_keys=True))
-
-    comp_stats=data['rating']
-    print(account,comp_stats)
 
 if __name__ == '__main__':
     main()
