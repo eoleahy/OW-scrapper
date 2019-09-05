@@ -8,13 +8,20 @@ import pygame
 
 image_path = "src/icons/"
 
-font_size=200
+font_size=180
 FULL_SCREEN = 0
 
 def main():
 
+    #                   platform,region,account
     overwatch=Overwatch("","","")
+
     elo = overwatch.get_rating()
+    tank_rating=elo[0]
+    damage_rating=elo[1]
+    support_rating=elo[2]
+    average_rating=elo[3]
+
     overwatch.profile_to_json()
 
     pygame.init()
@@ -37,22 +44,62 @@ def main():
         for event in pygame.event.get():
             if event.type == pygame.QUIT: sys.exit()
 
-        rank = determine_rank(elo)
+        tank_rank = determine_rank(tank_rating)
+        damage_rank = determine_rank(damage_rating)
+        support_rank = determine_rank(support_rating)
+        average_rank = determine_rank(average_rating)
 
-        text = font.render(str(elo),True,[255,255,255])
+        tank_text = font.render(str(tank_rating)+"-Tank",True,[255,255,255])
+        damage_text = font.render(str(damage_rating)+"-Damage",True,[255,255,255])
+        support_text = font.render(str(support_rating)+"-Support",True,[255,255,255])
+        text = font.render(str(average_rating)+"-Average",True,[255,255,255])
 
-        rank_image = pygame.image.load(image_path + rank + ".png")
+        tank_image = pygame.image.load(image_path + average_rank + ".png")
+        damage_image = pygame.image.load(image_path + average_rank + ".png")
+        support_image = pygame.image.load(image_path + average_rank + ".png")
+        rank_image = pygame.image.load(image_path + average_rank + ".png")
+
+        tank_rect = tank_image.get_rect()
+        damage_rect = damage_image.get_rect()
+        support_rect = support_image.get_rect()
         rank_rect = rank_image.get_rect()
 
-        rank_rect.x=0
-        rank_rect.y=200
+        tank_rect.x=0
+        damage_rect.x=0
+        support_rect.x=0
+        tank_rect.x=0
 
+        tank_rect.y=0
+        damage_rect.y=150
+        support_rect.y=300
+        rank_rect.y=450
+
+        tank_text_rect= tank_text.get_rect()
+        damage_text_rect= damage_text.get_rect()
+        support_text_rect= support_text.get_rect()
         text_rect= text.get_rect()
+
+        tank_text_rect.x=220
+        damage_text_rect.x=220
+        support_text_rect.x=220
         text_rect.x=220
-        text_rect.y=265
+
+
+        tank_text_rect.y=50
+        damage_text_rect.y=200
+        support_text_rect.y=350
+        text_rect.y=500
 
         screen.fill(black)
+
+        screen.blit(tank_image,tank_rect)
+        screen.blit(damage_image,damage_rect)
+        screen.blit(support_image,support_rect)
         screen.blit(rank_image,rank_rect)
+
+        screen.blit(tank_text,tank_text_rect)
+        screen.blit(damage_text,damage_text_rect)
+        screen.blit(support_text,support_text_rect)
         screen.blit(text,text_rect)
 
         pygame.display.flip()
