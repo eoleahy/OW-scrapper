@@ -1,7 +1,6 @@
 import os, sys
 from overwatch import Overwatch
 import time
-
 import pygame
 
 image_path = "src/icons/"
@@ -11,11 +10,10 @@ FULL_SCREEN = 0
 
 timer_length = 300 #5 minutes
 
-
 def main():
 
     #                   platform,region,account
-    overwatch=Overwatch("","","")
+    overwatch=Overwatch("pc","eu","Slinky-21792")
 
     #overwatch.profile_to_json()
 
